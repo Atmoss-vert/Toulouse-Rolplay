@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toulouse Rolplay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul>
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li><a href="#discord" class="nav-link"><i class="fab fa-discord"></i> Serveur Discord</a></li>
+                <li><a href="#map" class="nav-link"><i class="fas fa-map-marker-alt"></i> Carte</a></li>
+                <li><a href="#shop" class="nav-link"><i class="fas fa-store"></i> Boutique</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="home" class="section active">
+        <div class="content">
+            <h1 class="animate-title">Bienvenue sur Toulouse Rolplay</h1>
+            <p class="animate-text">Le meilleur jeu de rôle en ligne avec une communauté incroyable et des aventures sans fin.</p>
+            <a href="#shop" class="animate-btn">Découvrir la Boutique</a>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <div class="content">
+            <h2 class="animate-title">À Propos</h2>
+            <p class="animate-text">Toulouse Rolplay est un jeu de rôle immersif où tu peux créer ton propre personnage, explorer la ville de Toulouse, et participer à des missions palpitantes.</p>
+        </div>
+    </div>
+
+    <div id="discord" class="section">
+        <div class="content">
+            <h2 class="animate-title">Rejoins notre Serveur Discord</h2>
+            <p class="animate-text">Connecte-toi avec la communauté, participe à des événements exclusifs et discute avec d'autres joueurs.</p>
+            <a href="https://discord.gg/bFxuQpHZ" target="_blank" class="animate-btn">Rejoindre le Discord</a>
+        </div>
+    </div>
+
+    <div id="map" class="section">
+        <div class="content">
+            <h2 class="animate-title">Carte du Jeu</h2>
+            <p class="animate-text">Explore la carte interactive de Toulouse et découvre tous les endroits intéressants.</p>
+            <a href="https://www.roblox.com/fr/games/110819954665342/PARIS-5eme-Arrondissement" target="_blank" class="animate-btn">Voir la Carte</a>
+        </div>
+    </div>
+
+    <div id="shop" class="section">
+        <div class="content">
+            <h2 class="animate-title">Boutique</h2>
+            <p class="animate-text">Achète des articles exclusifs pour personnaliser ton expérience de jeu.</p>
+            <!-- Ajoute des liens ou des détails de la boutique ici -->
+        </div>
+    </div>
+
+    <!-- FontAwesome pour les icônes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <script>
+        // Script pour la navigation entre les sections
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

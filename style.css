@@ -1,0 +1,203 @@
+/* Style global et reset des marges */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Palette de couleurs : sombre avec accents colorés */
+:root {
+    --primary-color: #ff6347; /* Orange vif */
+    --secondary-color: #1e90ff; /* Bleu vif */
+    --highlight-color: #32cd32; /* Vert lime */
+    --dark-bg: rgba(0, 0, 0, 0.3); /* Noir avec moins d'opacité */
+    --light-text: #e0e0e0; /* Texte clair */
+    --hover-color: #ff4500; /* Orange foncé */
+}
+
+/* Configuration globale de la page */
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: var(--light-text);
+    overflow: hidden;
+}
+
+/* Image de fond couvrant tout l'écran sans bordures noires et non zoomée */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://tinyurl.com/3ya7uww2') no-repeat center center fixed;
+    background-size: cover; /* Assure que l'image couvre toute la surface */
+    z-index: -1; /* Placer l'image en arrière-plan */
+}
+
+/* Style pour le header et le menu de navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Moins sombre pour mieux voir l'image */
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background 0.4s, color 0.4s;
+}
+
+.nav-link:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Style des sections */
+.section {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4); /* Moins sombre pour voir l'image */
+    transition: opacity 1s ease;
+}
+
+.section.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Contenu centralisé et stylé */
+.content {
+    background: rgba(0, 0, 0, 0.3); /* Moins sombre pour voir l'image */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Titres et animations d'apparition */
+.animate-title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    animation: popUp 2s ease-out;
+}
+
+.animate-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+.animate-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.animate-btn:hover {
+    background-color: var(--highlight-color);
+    transform: scale(1.05);
+}
+
+/* Styles pour les icônes et les liens d'extras */
+.extra-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.extra-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3); /* Moins sombre pour voir l'image */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: var(--light-text);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.extra-item i {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.extra-item p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.extra-item:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Animations complexes */
+@keyframes popUp {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation des sections */
+.section {
+    opacity: 0;
+    animation: fadeInSection 1s forwards;
+}
+
+@keyframes fadeInSection {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
